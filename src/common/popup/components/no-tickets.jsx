@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ExternalLink from './external-link';
+import ErrorDetails from './error-details';
 
 import ErrorShape from '../utils/error-shape';
 
@@ -51,6 +52,8 @@ function Report({ errors }) {
       <p className="pb-1">
         <IssueLink />
       </p>
+      {/* eslint-disable-next-line react/no-array-index-key */}
+      {errors.map((error, index) => <ErrorDetails key={index} error={error} />)}
     </>
   );
 }
